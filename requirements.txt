@@ -1,0 +1,12 @@
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch
+yt-dlp
+faster-whisper
+sentence-transformers
+qdrant-client>=1.9.0
+urllib3
+openai
+python-dotenv
+fastapi
+uvicorn[standard]
+pytest
