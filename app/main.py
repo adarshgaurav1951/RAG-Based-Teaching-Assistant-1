@@ -1,8 +1,9 @@
 """
 FastAPI application for RAG-Based AI Teaching Assistant.
 Features an Unriddle / NotebookLM inspired modern user interface with:
-- 3-column SaaS layout (Sidebar, Video Player + Transcript notes, Interactive AI Chat)
+- 3-column SaaS layout (Sidebar, Video Player + Visual Concept Map + Transcript, Interactive AI Chat)
 - Embedded YouTube Player with synchronized timestamp scrubbing
+- Visual Concept Roadmap with interactive concept cards & chapter timeline
 - Multilingual Hinglish semantic retrieval and grounded teaching responses
 - Clickable timestamp pills that seek the video player in real-time
 """
@@ -188,7 +189,7 @@ def index() -> str:
   <title>Unriddle AI - Video & Lecture Assistant</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #f8fafc;
@@ -202,7 +203,10 @@ def index() -> str:
       --sidebar-active: #f1f5f9;
       --primary-black: #09090b;
       --accent-blue: #2563eb;
+      --accent-indigo: #4f46e5;
       --accent-orange: #ea580c;
+      --accent-emerald: #10b981;
+      --accent-violet: #8b5cf6;
       --pill-bg: #f1f5f9;
       --pill-border: #e2e8f0;
     }
@@ -212,7 +216,7 @@ def index() -> str:
       font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       background: #eef2f6;
       color: var(--text-main);
-      padding: 18px;
+      padding: 16px;
       height: 100vh;
       overflow: hidden;
     }
@@ -220,10 +224,10 @@ def index() -> str:
     /* Master Window Wrapper */
     .app-window {
       background: var(--surface);
-      border-radius: 18px;
+      border-radius: 20px;
       border: 1px solid var(--border);
-      box-shadow: 0 16px 40px -10px rgba(15, 23, 42, 0.08), 0 0 1px 1px rgba(15, 23, 42, 0.04);
-      height: calc(100vh - 36px);
+      box-shadow: 0 20px 45px -10px rgba(15, 23, 42, 0.09), 0 0 1px 1px rgba(15, 23, 42, 0.04);
+      height: calc(100vh - 32px);
       display: flex;
       overflow: hidden;
       position: relative;
@@ -277,10 +281,10 @@ def index() -> str:
       color: var(--text-main);
       transition: all 0.15s;
     }
-    .btn-icon-plus:hover { background: #e2e8f0; transform: scale(1.04); }
+    .btn-icon-plus:hover { background: #e2e8f0; transform: scale(1.05); }
 
     .nav-section {
-      padding: 6px 10px;
+      padding: 4px 10px;
       display: flex;
       flex-direction: column;
       gap: 2px;
@@ -299,15 +303,10 @@ def index() -> str:
       text-decoration: none;
     }
     .nav-item:hover { background: var(--sidebar-active); color: var(--text-main); }
-    .nav-item.active {
-      background: var(--sidebar-active);
-      color: var(--text-main);
-      font-weight: 600;
-    }
     .nav-icon { width: 16px; height: 16px; color: var(--text-muted); flex-shrink: 0; }
 
     .doc-section {
-      padding: 10px 10px 4px 10px;
+      padding: 8px 10px 4px 10px;
       margin-top: 4px;
       flex: 1;
       overflow-y: auto;
@@ -345,7 +344,7 @@ def index() -> str:
     }
 
     /* ----------------------------------------------------------------------- */
-    /* 2. Center Column (Video Player + Transcript Notes)                     */
+    /* 2. Center Column (Video Player + Visual Roadmap + Transcript)           */
     /* ----------------------------------------------------------------------- */
     .center-col {
       flex: 1;
@@ -366,7 +365,7 @@ def index() -> str:
     }
     .doc-title-input {
       font-size: 1.05rem;
-      font-weight: 600;
+      font-weight: 700;
       color: var(--text-main);
       border: none;
       outline: none;
@@ -412,14 +411,15 @@ def index() -> str:
     .btn-header-pill:hover, .btn-header-pill.active {
       background: var(--sidebar-active);
       color: var(--text-main);
+      font-weight: 600;
     }
 
     .center-content {
       padding: 20px 24px;
       display: flex;
       flex-direction: column;
-      gap: 20px;
-      max-width: 820px;
+      gap: 16px;
+      max-width: 860px;
       margin: 0 auto;
       width: 100%;
     }
@@ -431,7 +431,7 @@ def index() -> str:
       background: #000000;
       border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
       position: relative;
     }
     .video-card iframe, .video-card #yt-player {
@@ -440,35 +440,191 @@ def index() -> str:
       border: none;
     }
 
-    /* Document / Transcript Body */
-    .notes-document {
+    /* VISUAL CHAPTER TIMELINE BAR */
+    .visual-timeline-box {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 14px;
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 8px;
     }
-    .doc-section-header {
+    .timeline-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.76rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--text-muted);
+    }
+    .timeline-track {
+      height: 8px;
+      background: #e2e8f0;
+      border-radius: 6px;
+      display: flex;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .track-seg {
+      height: 100%;
+      transition: opacity 0.15s, transform 0.1s;
+      position: relative;
+    }
+    .track-seg:hover { opacity: 0.85; }
+    .seg-1 { background: #3b82f6; width: 14%; } /* Intro */
+    .seg-2 { background: #8b5cf6; width: 20%; } /* Neural Nets */
+    .seg-3 { background: #ec4899; width: 24%; } /* LLMs */
+    .seg-4 { background: #f97316; width: 22%; } /* RAG */
+    .seg-5 { background: #10b981; width: 20%; } /* Fine-tuning */
+
+    .timeline-chips {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .time-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-size: 0.74rem;
+      font-weight: 600;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      color: #334155;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .time-chip:hover {
+      background: #0f172a;
+      color: #ffffff;
+      border-color: #0f172a;
+    }
+    .time-chip .chip-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+    }
+
+    /* Center Pane Visual Tabs */
+    .center-tabs-nav {
+      display: flex;
+      gap: 8px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 2px;
+      margin-top: 4px;
+    }
+    .c-tab-btn {
+      background: transparent;
+      border: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: all 0.12s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .c-tab-btn:hover { color: var(--text-main); background: #f1f5f9; }
+    .c-tab-btn.active { color: var(--accent-blue); background: #eff6ff; }
+
+    /* VISUAL CONCEPT ROADMAP GRID */
+    .concept-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 12px;
+      margin-top: 6px;
+    }
+    .concept-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px;
+      box-shadow: 0 2px 6px rgba(15, 23, 42, 0.03);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 10px;
+      transition: all 0.18s;
+      border-left: 4px solid var(--accent-blue);
+    }
+    .concept-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.06);
+      border-color: #cbd5e1;
+    }
+    .concept-card.orange { border-left-color: var(--accent-orange); }
+    .concept-card.purple { border-left-color: var(--accent-violet); }
+    .concept-card.green { border-left-color: var(--accent-emerald); }
+
+    .c-card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+    .c-card-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+    .c-card-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+      margin-top: 4px;
+    }
+    .c-card-footer {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding-bottom: 6px;
-      border-bottom: 1px solid var(--border);
+      padding-top: 6px;
+      border-top: 1px solid var(--border-subtle);
+      font-size: 0.76rem;
     }
-    .doc-section-header h3 {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--text-main);
-    }
-    .skeleton-line {
-      height: 11px;
+    .btn-card-seek {
       background: #f1f5f9;
-      border-radius: 4px;
+      border: 1px solid var(--border);
+      color: var(--accent-blue);
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 6px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: all 0.15s;
+    }
+    .btn-card-seek:hover { background: var(--accent-blue); color: #fff; }
+
+    /* Transcript & Searchable List */
+    .transcript-toolbar {
+      display: flex;
+      gap: 8px;
+      align-items: center;
       margin-bottom: 8px;
     }
+    .transcript-search {
+      flex: 1;
+      padding: 6px 12px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      font-size: 0.82rem;
+      outline: none;
+      background: #f8fafc;
+    }
+    .transcript-search:focus { border-color: var(--accent-blue); background: #ffffff; }
 
     .transcript-feed {
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 10px;
       max-height: 380px;
       overflow-y: auto;
       padding-right: 6px;
@@ -478,7 +634,7 @@ def index() -> str:
       border-radius: 8px;
       background: #f8fafc;
       border: 1px solid var(--border-subtle);
-      font-size: 0.88rem;
+      font-size: 0.86rem;
       line-height: 1.55;
       color: #334155;
       transition: background 0.15s;
@@ -546,7 +702,7 @@ def index() -> str:
       padding: 20px;
       display: flex;
       flex-direction: column;
-      gap: 22px;
+      gap: 20px;
     }
 
     /* Message Block */
@@ -581,8 +737,6 @@ def index() -> str:
       color: #1e293b;
       word-break: break-word;
     }
-    .msg-content p { margin-bottom: 10px; }
-    .msg-content p:last-child { margin-bottom: 0; }
 
     /* Inline Timestamp Pill */
     .timestamp-pill {
@@ -606,6 +760,7 @@ def index() -> str:
       background: #e2e8f0;
       color: #09090b;
       border-color: #cbd5e1;
+      transform: translateY(-1px);
     }
 
     /* Floating Chat Input Card */
@@ -700,6 +855,33 @@ def index() -> str:
       transition: transform 0.12s, opacity 0.15s;
     }
     .btn-send:hover { opacity: 0.9; transform: scale(1.05); }
+
+    /* Quick Prompt Chips */
+    .quick-chips-row {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      padding-bottom: 6px;
+      scrollbar-width: none;
+    }
+    .quick-chips-row::-webkit-scrollbar { display: none; }
+    .q-chip {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 9999px;
+      padding: 3px 10px;
+      font-size: 0.74rem;
+      font-weight: 600;
+      color: #475569;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.15s;
+    }
+    .q-chip:hover {
+      background: #0f172a;
+      color: #ffffff;
+      border-color: #0f172a;
+    }
 
     /* Ingestion Modal */
     .modal-overlay {
@@ -798,7 +980,6 @@ def index() -> str:
           Lectures & Notes
         </div>
         <div id="videoSidebarList">
-          <!-- Populated dynamically via /api/videos -->
           <div class="doc-item selected" id="activeDocItem">
             <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
             <span id="activeDocLabel">GenAI Roadmap for Beginners</span>
@@ -808,7 +989,7 @@ def index() -> str:
         <div style="margin-top: 14px; font-size: 0.72rem; font-weight: 700; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.05em; padding: 6px 10px 4px 10px;">
           Resources
         </div>
-        <div class="doc-item">
+        <div class="doc-item" onclick="insertPrompt('What are the prerequisites for this course?')">
           <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           <span>Prompts to get you started</span>
         </div>
@@ -828,7 +1009,7 @@ def index() -> str:
       </div>
     </aside>
 
-    <!-- 2. CENTER COLUMN (Video Player & Transcript) -->
+    <!-- 2. CENTER COLUMN (Video Player + Visual Roadmap + Transcript) -->
     <main class="center-col">
       <div class="center-header">
         <input type="text" id="lectureTitleInput" class="doc-title-input" value="GenAI Roadmap for Beginners | CampusX" readonly>
@@ -838,7 +1019,7 @@ def index() -> str:
             <span>✦</span>
             <span>Chat</span>
           </button>
-          <button class="btn-header-pill">
+          <button class="btn-header-pill" onclick="switchCenterTab('notes')">
             <span>✏️</span>
             <span>Notes</span>
           </button>
@@ -854,24 +1035,151 @@ def index() -> str:
           <div id="yt-player"></div>
         </div>
 
-        <!-- Document Notes & Searchable Transcript -->
-        <div class="notes-document">
-          <div class="doc-section-header">
-            <h3>Lecture Transcript & Notes</h3>
-            <span id="transcriptMeta" style="font-size: 0.78rem; color: var(--text-muted);">915 segments • Click any timestamp to seek video</span>
+        <!-- VISUAL CHAPTER TIMELINE SCRUBBER -->
+        <div class="visual-timeline-box">
+          <div class="timeline-title-row">
+            <span>Lecture Roadmap Timeline</span>
+            <span id="videoDurationLabel">50:14 Total</span>
+          </div>
+          
+          <div class="timeline-track">
+            <div class="track-seg seg-1" onclick="seekVideo(0)" title="00:00 - Introduction & Motivation"></div>
+            <div class="track-seg seg-2" onclick="seekVideo(372)" title="06:12 - Neural Networks & Transformers"></div>
+            <div class="track-seg seg-3" onclick="seekVideo(1403)" title="23:23 - Foundation Models & LLMs"></div>
+            <div class="track-seg seg-4" onclick="seekVideo(2289)" title="38:09 - RAG & Vector Databases"></div>
+            <div class="track-seg seg-5" onclick="seekVideo(2700)" title="45:00 - Career Paths & Fine-Tuning"></div>
+          </div>
+
+          <div class="timeline-chips">
+            <div class="time-chip" onclick="seekVideo(0)">
+              <span class="chip-dot" style="background: #3b82f6;"></span>
+              <span>00:00 Intro</span>
+            </div>
+            <div class="time-chip" onclick="seekVideo(372)">
+              <span class="chip-dot" style="background: #8b5cf6;"></span>
+              <span>06:12 Deep Learning</span>
+            </div>
+            <div class="time-chip" onclick="seekVideo(1403)">
+              <span class="chip-dot" style="background: #ec4899;"></span>
+              <span>23:23 LLMs</span>
+            </div>
+            <div class="time-chip" onclick="seekVideo(2289)">
+              <span class="chip-dot" style="background: #f97316;"></span>
+              <span>38:09 RAG & Vectors</span>
+            </div>
+            <div class="time-chip" onclick="seekVideo(2700)">
+              <span class="chip-dot" style="background: #10b981;"></span>
+              <span>45:00 Fine-Tuning</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Center Tabs Navigation -->
+        <div class="center-tabs-nav">
+          <button class="c-tab-btn active" id="tabBtnRoadmap" onclick="switchCenterTab('roadmap')">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            <span>Visual Concept Roadmap</span>
+          </button>
+          <button class="c-tab-btn" id="tabBtnTranscript" onclick="switchCenterTab('transcript')">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+            <span>Interactive Transcript</span>
+          </button>
+          <button class="c-tab-btn" id="tabBtnNotes" onclick="switchCenterTab('notes')">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            <span>Lecture Notes & Insights</span>
+          </button>
+        </div>
+
+        <!-- TAB 1: VISUAL CONCEPT ROADMAP -->
+        <div id="paneRoadmap" class="notes-document">
+          <div class="concept-grid">
+            
+            <div class="concept-card">
+              <div class="c-card-top">
+                <span class="c-card-title">1. Neural Nets & Transformers</span>
+                <span style="font-size: 0.72rem; font-weight: 700; color: #2563eb; background: #eff6ff; padding: 2px 6px; border-radius: 4px;">Stage 1</span>
+              </div>
+              <div class="c-card-desc">
+                Foundations of deep learning, self-attention, encoder-decoder architectures, and dense vector embeddings.
+              </div>
+              <div class="c-card-footer">
+                <span style="color: var(--text-muted);">Timestamp: 06:12</span>
+                <button class="btn-card-seek" onclick="seekVideo(372)">▶ Watch 06:12</button>
+              </div>
+            </div>
+
+            <div class="concept-card purple">
+              <div class="c-card-top">
+                <span class="c-card-title">2. Foundation Models & LLMs</span>
+                <span style="font-size: 0.72rem; font-weight: 700; color: #8b5cf6; background: #f5f3ff; padding: 2px 6px; border-radius: 4px;">Stage 2</span>
+              </div>
+              <div class="c-card-desc">
+                Large language models, prompt engineering, open-source weights (Llama, Mistral), and token generation.
+              </div>
+              <div class="c-card-footer">
+                <span style="color: var(--text-muted);">Timestamp: 23:23</span>
+                <button class="btn-card-seek" onclick="seekVideo(1403)">▶ Watch 23:23</button>
+              </div>
+            </div>
+
+            <div class="concept-card orange">
+              <div class="c-card-top">
+                <span class="c-card-title">3. Retrieval-Augmented Gen (RAG)</span>
+                <span style="font-size: 0.72rem; font-weight: 700; color: #ea580c; background: #fff7ed; padding: 2px 6px; border-radius: 4px;">Stage 3</span>
+              </div>
+              <div class="c-card-desc">
+                Chunking strategies, multilingual vector embeddings, vector databases (Qdrant), and grounded prompt synthesis.
+              </div>
+              <div class="c-card-footer">
+                <span style="color: var(--text-muted);">Timestamp: 38:09</span>
+                <button class="btn-card-seek" onclick="seekVideo(2289)">▶ Watch 38:09</button>
+              </div>
+            </div>
+
+            <div class="concept-card green">
+              <div class="c-card-top">
+                <span class="c-card-title">4. Fine-Tuning & Customization</span>
+                <span style="font-size: 0.72rem; font-weight: 700; color: #10b981; background: #ecfdf5; padding: 2px 6px; border-radius: 4px;">Stage 4</span>
+              </div>
+              <div class="c-card-desc">
+                Supervised fine-tuning (SFT), LoRA, parameter-efficient fine-tuning (PEFT), and domain-specific LLM adaptation.
+              </div>
+              <div class="c-card-footer">
+                <span style="color: var(--text-muted);">Timestamp: 40:15</span>
+                <button class="btn-card-seek" onclick="seekVideo(2415)">▶ Watch 40:15</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- TAB 2: TRANSCRIPT -->
+        <div id="paneTranscript" class="notes-document" style="display: none;">
+          <div class="transcript-toolbar">
+            <input type="text" id="transcriptSearchInput" class="transcript-search" placeholder="Search spoken keywords in transcript..." oninput="filterTranscript()">
+            <span id="transcriptMeta" style="font-size: 0.76rem; color: var(--text-muted); white-space: nowrap;">915 segments</span>
           </div>
 
           <div class="transcript-feed" id="transcriptFeed">
-            <!-- Dynamic or skeleton transcript -->
             <div class="transcript-item">
               <span class="ts-tag" onclick="seekVideo(0)">00:00</span>
               <span>Loading transcript for selected lecture...</span>
             </div>
-            <div class="skeleton-line" style="width: 90%;"></div>
-            <div class="skeleton-line" style="width: 75%;"></div>
-            <div class="skeleton-line" style="width: 82%;"></div>
           </div>
         </div>
+
+        <!-- TAB 3: NOTES CANVAS -->
+        <div id="paneNotes" class="notes-document" style="display: none;">
+          <div style="background: #ffffff; border: 1px solid var(--border); border-radius: 10px; padding: 18px;">
+            <h4 style="font-size: 0.95rem; margin-bottom: 8px;">Key Lecture Takeaways</h4>
+            <ul style="padding-left: 20px; font-size: 0.88rem; line-height: 1.7; color: #334155;">
+              <li><strong>The Two Career Paths:</strong> Builder side (building with LLMs & RAG) vs Trainer side (pre-training & fine-tuning models).</li>
+              <li><strong>Why RAG Matters:</strong> Hallucination reduction, private domain knowledge injection, and instant up-to-date retrieval without retraining.</li>
+              <li><strong>Prerequisites:</strong> Python proficiency, vector math basics, and an understanding of modern transformer attention.</li>
+            </ul>
+          </div>
+        </div>
+
       </div>
     </main>
 
@@ -883,7 +1191,8 @@ def index() -> str:
       </div>
 
       <div class="chat-scroll" id="chatScroll">
-        <!-- Initial Conversation Matching Screenshot Aesthetic -->
+        
+        <!-- Welcome Message -->
         <div class="msg-block">
           <div class="msg-sender">
             <span class="sender-dot user"></span>
@@ -906,6 +1215,15 @@ def index() -> str:
             <br><br>
             Finally, the roadmap divides into builder and user sides, highlighting Retrieval-Augmented Generation (RAG) <span class="timestamp-pill" onclick="seekVideo(2289)">38:09</span> and fine-tuning techniques to adapt models to specialized private knowledge bases.
           </div>
+        </div>
+      </div>
+
+      <!-- Quick Prompt Suggestion Chips -->
+      <div style="padding: 0 18px 4px 18px;">
+        <div class="quick-chips-row">
+          <div class="q-chip" onclick="insertPrompt('What is RAG and why is it important in this roadmap?')">💡 What is RAG?</div>
+          <div class="q-chip" onclick="insertPrompt('Deep learning aur Transformers ke baare mein kya bataya gaya hai?')">⚡ Transformers</div>
+          <div class="q-chip" onclick="insertPrompt('Explain the Builder vs User career track in Hinglish')">🎯 Builder vs User</div>
         </div>
       </div>
 
@@ -965,6 +1283,7 @@ def index() -> str:
     let currentVideoTitle = 'GenAI Roadmap for Beginners | CampusX';
     let ytPlayer = null;
     let isPlayerReady = false;
+    let allSegments = [];
 
     // YouTube API Ready callback
     function onYouTubeIframeAPIReady() {
@@ -1003,6 +1322,17 @@ def index() -> str:
       return `${String(m).padStart(2, '0')}:${String(rem).padStart(2, '0')}`;
     }
 
+    // Switch between center tabs (roadmap / transcript / notes)
+    function switchCenterTab(tabName) {
+      document.getElementById('tabBtnRoadmap').classList.toggle('active', tabName === 'roadmap');
+      document.getElementById('tabBtnTranscript').classList.toggle('active', tabName === 'transcript');
+      document.getElementById('tabBtnNotes').classList.toggle('active', tabName === 'notes');
+
+      document.getElementById('paneRoadmap').style.display = tabName === 'roadmap' ? 'block' : 'none';
+      document.getElementById('paneTranscript').style.display = tabName === 'transcript' ? 'block' : 'none';
+      document.getElementById('paneNotes').style.display = tabName === 'notes' ? 'block' : 'none';
+    }
+
     // Load available videos into sidebar
     async function fetchVideos() {
       try {
@@ -1023,7 +1353,6 @@ def index() -> str:
           container.appendChild(item);
         });
 
-        // If current video is in the list, load its transcript
         loadTranscript(currentVideoId);
       } catch (e) {
         console.error('Error fetching videos:', e);
@@ -1050,21 +1379,42 @@ def index() -> str:
           return;
         }
         const data = await res.json();
-        meta.textContent = `${data.segments ? data.segments.length : 0} segments • Click timestamp to seek video`;
-
-        feed.innerHTML = '';
-        (data.segments || []).slice(0, 150).forEach(seg => {
-          const row = document.createElement('div');
-          row.className = 'transcript-item';
-          row.innerHTML = `
-            <span class="ts-tag" onclick="seekVideo(${Math.floor(seg.start)})">${formatTime(seg.start)}</span>
-            <span>${seg.text}</span>
-          `;
-          feed.appendChild(row);
-        });
+        allSegments = data.segments || [];
+        meta.textContent = `${allSegments.length} segments • Click timestamp to scrub`;
+        renderTranscript(allSegments);
       } catch (err) {
         console.error('Error loading transcript:', err);
       }
+    }
+
+    function renderTranscript(segments) {
+      const feed = document.getElementById('transcriptFeed');
+      feed.innerHTML = '';
+      segments.slice(0, 150).forEach(seg => {
+        const row = document.createElement('div');
+        row.className = 'transcript-item';
+        row.innerHTML = `
+          <span class="ts-tag" onclick="seekVideo(${Math.floor(seg.start)})">${formatTime(seg.start)}</span>
+          <span>${seg.text}</span>
+        `;
+        feed.appendChild(row);
+      });
+    }
+
+    function filterTranscript() {
+      const q = document.getElementById('transcriptSearchInput').value.toLowerCase().trim();
+      if (!q) {
+        renderTranscript(allSegments);
+        return;
+      }
+      const filtered = allSegments.filter(s => s.text.toLowerCase().includes(q));
+      renderTranscript(filtered);
+    }
+
+    function insertPrompt(text) {
+      const input = document.getElementById('questionInput');
+      input.value = text;
+      input.focus();
     }
 
     // Send question to RAG
@@ -1111,7 +1461,6 @@ def index() -> str:
         const data = await res.json();
         const contentDiv = assistBlock.querySelector('.msg-content');
 
-        // Replace timestamps with interactive pills
         let answerText = data.answer || '';
         
         // Regex to convert [MM:SS] or MM:SS citations into pills
@@ -1121,9 +1470,9 @@ def index() -> str:
           return `<span class="timestamp-pill" onclick="seekVideo(${totalSec})">${timeStr}</span>`;
         });
 
-        // Add explicit citations if available
+        // Add direct citations if available
         if (data.citations && data.citations.length > 0) {
-          formattedHtml += '<div style="margin-top: 12px; font-size: 0.82rem; color: var(--text-muted);">';
+          formattedHtml += '<div style="margin-top: 14px; font-size: 0.82rem; color: var(--text-muted);">';
           formattedHtml += '<strong>Direct Video Timestamps:</strong><br>';
           data.citations.forEach(c => {
             formattedHtml += `<span class="timestamp-pill" onclick="seekVideo(${Math.floor(c.start)})" style="margin-top: 4px;">▶ ${c.formatted_range}</span> `;
