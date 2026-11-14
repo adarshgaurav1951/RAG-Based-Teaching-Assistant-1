@@ -1,0 +1,1577 @@
+{
+  "video_id": "_3ezSpJw2E8",
+  "title": "Generative AI using LangChain | GENAI for Beginners | CampusX",
+  "asr_model": "tiny",
+  "detected_language": "hi",
+  "language_probability": 0.8144,
+  "duration_seconds": 918.08,
+  "segment_count": 261,
+  "segments": [
+    {
+      "segment_id": 1,
+      "start": 0.0,
+      "end": 3.54,
+      "text": "Hi guys, my name is Nitish and welcome to my YouTube channel."
+    },
+    {
+      "segment_id": 2,
+      "start": 4.16,
+      "end": 10.52,
+      "text": "Now if you have seen my last video, then you will probably know that I have decided that now I will be going forward"
+    },
+    {
+      "segment_id": 3,
+      "start": 10.52,
+      "end": 11.94,
+      "text": "Generative AI around videos."
+    },
+    {
+      "segment_id": 4,
+      "start": 12.58,
+      "end": 18.48,
+      "text": "In fact, I had promised you that this entire year, 2025, this is the name of the Generative AI."
+    },
+    {
+      "segment_id": 5,
+      "start": 19.72,
+      "end": 22.7,
+      "text": "And I had promised you that I will be going to the end of the event."
+    },
+    {
+      "segment_id": 6,
+      "start": 22.7,
+      "end": 24.24,
+      "text": "Generative AI will cover here."
+    },
+    {
+      "segment_id": 7,
+      "start": 25.12,
+      "end": 27.88,
+      "text": "Today, we are going to first play the first playlist."
+    },
+    {
+      "segment_id": 8,
+      "start": 27.88,
+      "end": 30.62,
+      "text": "And today, we are going to launch the route of the route of the route."
+    },
+    {
+      "segment_id": 9,
+      "start": 32.32,
+      "end": 35.6,
+      "text": "And the topic has playlist of a very important topic."
+    },
+    {
+      "segment_id": 10,
+      "start": 36.34,
+      "end": 38.06,
+      "text": "And the topic of the topic is Langchin."
+    },
+    {
+      "segment_id": 11,
+      "start": 38.32,
+      "end": 42.56,
+      "text": "If you have seen some Generative AI, then I am pretty sure you have never heard of Langchin."
+    },
+    {
+      "segment_id": 12,
+      "start": 44.26,
+      "end": 51.24,
+      "text": "Now if you feel that this playlist will help you in the next video, then trust me today's video."
+    },
+    {
+      "segment_id": 13,
+      "start": 51.24,
+      "end": 53.08,
+      "text": "This is a very important topic."
+    },
+    {
+      "segment_id": 14,
+      "start": 53.58,
+      "end": 60.24,
+      "text": "Because today's video, I will tell you a detailed route of the route of the route that step by step is in this playlist."
+    },
+    {
+      "segment_id": 15,
+      "start": 60.74,
+      "end": 61.18,
+      "text": "I will launch it."
+    },
+    {
+      "segment_id": 16,
+      "start": 61.64,
+      "end": 64.54,
+      "text": "What will be the curriculum of this frequency of this video?"
+    },
+    {
+      "segment_id": 17,
+      "start": 64.96,
+      "end": 65.42,
+      "text": "Everything."
+    },
+    {
+      "segment_id": 18,
+      "start": 65.72,
+      "end": 67.16,
+      "text": "I will discuss in this video."
+    },
+    {
+      "segment_id": 19,
+      "start": 67.4,
+      "end": 69.38,
+      "text": "So please make sure you watch this video and do it."
+    },
+    {
+      "segment_id": 20,
+      "start": 70.2,
+      "end": 74.74,
+      "text": "Before starting a video, I wanted to give you some recap of the previous video."
+    },
+    {
+      "segment_id": 21,
+      "start": 76.64,
+      "end": 80.28,
+      "text": "I had discussed about the whole generation of the entire generation of the route of this route."
+    },
+    {
+      "segment_id": 22,
+      "start": 80.28,
+      "end": 85.04,
+      "text": "And I had told you that the whole generation of the entire route of this route is divided into two parts."
+    },
+    {
+      "segment_id": 23,
+      "start": 86.34,
+      "end": 89.7,
+      "text": "One is Builder Waller Side and one is User Waller Side."
+    },
+    {
+      "segment_id": 24,
+      "start": 90.18,
+      "end": 94.34,
+      "text": "Builder Waller Side is the one where you develop the foundation models."
+    },
+    {
+      "segment_id": 25,
+      "start": 94.38,
+      "end": 99.94,
+      "text": "And User Waller Side is the one where you make your own applications."
+    },
+    {
+      "segment_id": 26,
+      "start": 99.94,
+      "end": 102.7,
+      "text": "Then I showed you two sides of the curriculum."
+    },
+    {
+      "segment_id": 27,
+      "start": 103.26,
+      "end": 104.4,
+      "text": "I showed you Builder Waller Side."
+    },
+    {
+      "segment_id": 28,
+      "start": 105.6,
+      "end": 109.66,
+      "text": "There was a transfer of architecture, where you had a type of transfer of the type of transfer."
+    },
+    {
+      "segment_id": 29,
+      "start": 109.98,
+      "end": 113.06,
+      "text": "There was a pre-training transfer, a fine-tuning transfer, optimization transfer."
+    },
+    {
+      "segment_id": 30,
+      "start": 113.58,
+      "end": 115.16,
+      "text": "And then I showed you a user-value side."
+    },
+    {
+      "segment_id": 31,
+      "start": 117.1,
+      "end": 118.68,
+      "text": "We started this Langchin's playlist."
+    },
+    {
+      "segment_id": 32,
+      "start": 119.68,
+      "end": 121.54,
+      "text": "That user-value side is in the user-value side."
+    },
+    {
+      "segment_id": 33,
+      "start": 122.24,
+      "end": 123.26,
+      "text": "This is a user-value side."
+    },
+    {
+      "segment_id": 34,
+      "start": 124.08,
+      "end": 127.68,
+      "text": "I told you that you have to learn the most."
+    },
+    {
+      "segment_id": 35,
+      "start": 127.68,
+      "end": 130.44,
+      "text": "How to build LLM-based applications."
+    },
+    {
+      "segment_id": 36,
+      "start": 131.16,
+      "end": 134.76,
+      "text": "After that, I told you three ways to improve your skills."
+    },
+    {
+      "segment_id": 37,
+      "start": 136.18,
+      "end": 138.5,
+      "text": "Prompting Engineering, Rag and fine-tuning."
+    },
+    {
+      "segment_id": 38,
+      "start": 139.26,
+      "end": 141.28,
+      "text": "I told you that you had a completely new field."
+    },
+    {
+      "segment_id": 39,
+      "start": 141.58,
+      "end": 142.74,
+      "text": "And you are doing a new field with all the different agencies."
+    },
+    {
+      "segment_id": 40,
+      "start": 144.84,
+      "end": 148.1,
+      "text": "And you are doing LLM-ops and the machine-ers, topics."
+    },
+    {
+      "segment_id": 41,
+      "start": 149.06,
+      "end": 150.14,
+      "text": "We are doing this particular curriculum."
+    },
+    {
+      "segment_id": 42,
+      "start": 150.98,
+      "end": 152.2,
+      "text": "We are doing this playlist."
+    },
+    {
+      "segment_id": 43,
+      "start": 153.88,
+      "end": 155.14,
+      "text": "We will cover the portion of the curriculum."
+    },
+    {
+      "segment_id": 44,
+      "start": 156.14,
+      "end": 159.42,
+      "text": "We are making LLM applications."
+    },
+    {
+      "segment_id": 45,
+      "start": 160.46,
+      "end": 161.7,
+      "text": "They are taking this playlist."
+    },
+    {
+      "segment_id": 46,
+      "start": 162.9,
+      "end": 165.42,
+      "text": "So, we are making a picture of a whole picture."
+    },
+    {
+      "segment_id": 47,
+      "start": 166.32,
+      "end": 167.78,
+      "text": "We are making a picture of it."
+    },
+    {
+      "segment_id": 48,
+      "start": 167.78,
+      "end": 168.48,
+      "text": "We are starting it."
+    },
+    {
+      "segment_id": 49,
+      "start": 169.04,
+      "end": 172.52,
+      "text": "After that, we are doing topics that we have to cover."
+    },
+    {
+      "segment_id": 50,
+      "start": 172.6,
+      "end": 178.56,
+      "text": "But Langchin is going to be our starting point in the user-side of the generative."
+    },
+    {
+      "segment_id": 51,
+      "start": 179.1,
+      "end": 181.4,
+      "text": "I really hope you all have started."
+    },
+    {
+      "segment_id": 52,
+      "start": 181.4,
+      "end": 184.08,
+      "text": "We have started our origin."
+    },
+    {
+      "segment_id": 53,
+      "start": 184.64,
+      "end": 186.6,
+      "text": "We are doing this entire joint curriculum."
+    },
+    {
+      "segment_id": 54,
+      "start": 187.28,
+      "end": 190.06,
+      "text": "Before discussing about the plan, I would like to tell you one thing."
+    },
+    {
+      "segment_id": 55,
+      "start": 191.42,
+      "end": 195.2,
+      "text": "If you say one simple thing, if you want to say one framework,"
+    },
+    {
+      "segment_id": 56,
+      "start": 195.64,
+      "end": 198.3,
+      "text": "which helps you make any LLM-based application."
+    },
+    {
+      "segment_id": 57,
+      "start": 199.32,
+      "end": 203.46,
+      "text": "LLM-based applications means applications like chart, bot, e-gen etc."
+    },
+    {
+      "segment_id": 58,
+      "start": 204.16,
+      "end": 206.56,
+      "text": "This is a very simple way to make a whole framework."
+    },
+    {
+      "segment_id": 59,
+      "start": 208.08,
+      "end": 213.16,
+      "text": "Langchin is an open source framework that helps in building LLM-based applications."
+    },
+    {
+      "segment_id": 60,
+      "start": 213.72,
+      "end": 220.74,
+      "text": "It provides modular components and end to end tools that help developers build complex AI applications."
+    },
+    {
+      "segment_id": 61,
+      "start": 221.4,
+      "end": 228.26,
+      "text": "Such as chart bot, question-answering systems, rag-based applications, autonomous agents and much more."
+    },
+    {
+      "segment_id": 62,
+      "start": 229.22,
+      "end": 231.46,
+      "text": "So, in the nutshell, Langchin definition."
+    },
+    {
+      "segment_id": 63,
+      "start": 232.06,
+      "end": 233.54,
+      "text": "Now, I will tell you some other features."
+    },
+    {
+      "segment_id": 64,
+      "start": 233.54,
+      "end": 237.48,
+      "text": "You should learn how to popular Langchin and learn how to learn."
+    },
+    {
+      "segment_id": 65,
+      "start": 237.88,
+      "end": 245.62,
+      "text": "So, the biggest feature of Langchin is that Langchin is to support all the major LLM-based applications."
+    },
+    {
+      "segment_id": 66,
+      "start": 245.82,
+      "end": 248.12,
+      "text": "Open source or closed source is to create a function."
+    },
+    {
+      "segment_id": 67,
+      "start": 249.0,
+      "end": 252.26,
+      "text": "Langchin has every LLM integration module."
+    },
+    {
+      "segment_id": 68,
+      "start": 252.76,
+      "end": 259.4,
+      "text": "You have to open a GPT model or a cloud model or a gemini model."
+    },
+    {
+      "segment_id": 69,
+      "start": 259.4,
+      "end": 266.3,
+      "text": "And this is a very open source model that is connected to the whole space."
+    },
+    {
+      "segment_id": 70,
+      "start": 267.2,
+      "end": 269.16,
+      "text": "So, this is the most important feature."
+    },
+    {
+      "segment_id": 71,
+      "start": 269.68,
+      "end": 275.5,
+      "text": "Second feature is it simplifies LLM-based applications."
+    },
+    {
+      "segment_id": 72,
+      "start": 275.9,
+      "end": 278.46,
+      "text": "So, here, there are many interesting things."
+    },
+    {
+      "segment_id": 73,
+      "start": 279.14,
+      "end": 285.54,
+      "text": "The one who can make a lot of applications in the help of Langchin is a concept of change."
+    },
+    {
+      "segment_id": 74,
+      "start": 285.54,
+      "end": 289.06,
+      "text": "Which helps you to make a lot of complex pipelines."
+    },
+    {
+      "segment_id": 75,
+      "start": 290.28,
+      "end": 292.82,
+      "text": "And it helps you to make a lot of complex applications."
+    },
+    {
+      "segment_id": 76,
+      "start": 293.38,
+      "end": 295.48,
+      "text": "So, this is a very valuable Langchin."
+    },
+    {
+      "segment_id": 77,
+      "start": 296.02,
+      "end": 299.32,
+      "text": "In the LLM-based application, you help a lot."
+    },
+    {
+      "segment_id": 78,
+      "start": 299.82,
+      "end": 304.24,
+      "text": "Third feature is that, in Langchin, there are many integrations available."
+    },
+    {
+      "segment_id": 79,
+      "start": 304.58,
+      "end": 308.14,
+      "text": "So, in the LLM-based application, you have to connect all the tools."
+    },
+    {
+      "segment_id": 80,
+      "start": 308.88,
+      "end": 311.06,
+      "text": "For example, you have to connect your data based on this."
+    },
+    {
+      "segment_id": 81,
+      "start": 311.56,
+      "end": 313.9,
+      "text": "Or, you have to connect any remote data source."
+    },
+    {
+      "segment_id": 82,
+      "start": 313.9,
+      "end": 318.18,
+      "text": "Or, you have to deploy it or you have to connect it with AWS."
+    },
+    {
+      "segment_id": 83,
+      "start": 318.58,
+      "end": 323.08,
+      "text": "So, Langchin is a rapper who helps you with all these tools and services."
+    },
+    {
+      "segment_id": 84,
+      "start": 323.8,
+      "end": 325.04,
+      "text": "You will have to connect a lot."
+    },
+    {
+      "segment_id": 85,
+      "start": 326.02,
+      "end": 327.22,
+      "text": "You have to make a boilerplate code."
+    },
+    {
+      "segment_id": 86,
+      "start": 327.5,
+      "end": 328.8,
+      "text": "It is not necessary."
+    },
+    {
+      "segment_id": 87,
+      "start": 329.24,
+      "end": 332.32,
+      "text": "Fourth feature is that Langchin is free."
+    },
+    {
+      "segment_id": 88,
+      "start": 332.54,
+      "end": 333.46,
+      "text": "This is a very important reason."
+    },
+    {
+      "segment_id": 89,
+      "start": 333.86,
+      "end": 335.98,
+      "text": "Langchin's adoption, which is so high in the process."
+    },
+    {
+      "segment_id": 90,
+      "start": 336.74,
+      "end": 339.94,
+      "text": "Langchin is a free open source package."
+    },
+    {
+      "segment_id": 91,
+      "start": 339.94,
+      "end": 343.64,
+      "text": "And now, it is very actively developed."
+    },
+    {
+      "segment_id": 92,
+      "start": 344.32,
+      "end": 349.46,
+      "text": "In fact, within one or two years, you have to use your Langchin's three different versions."
+    },
+    {
+      "segment_id": 93,
+      "start": 350.2,
+      "end": 351.08,
+      "text": "So, it is working very quickly."
+    },
+    {
+      "segment_id": 94,
+      "start": 351.56,
+      "end": 353.86,
+      "text": "And it is not a new component on a daily basis."
+    },
+    {
+      "segment_id": 95,
+      "start": 354.84,
+      "end": 356.54,
+      "text": "So, this is a very big reason."
+    },
+    {
+      "segment_id": 96,
+      "start": 357.02,
+      "end": 358.7,
+      "text": "The Langchin is popular in the same way."
+    },
+    {
+      "segment_id": 97,
+      "start": 358.72,
+      "end": 361.26,
+      "text": "It is a whole new Gen AI community."
+    },
+    {
+      "segment_id": 98,
+      "start": 362.14,
+      "end": 366.2,
+      "text": "And lastly, it supports all major Gen AI uses."
+    },
+    {
+      "segment_id": 99,
+      "start": 366.2,
+      "end": 371.34,
+      "text": "It means, in generative way, you can create applications, chat boards, agents,"
+    },
+    {
+      "segment_id": 100,
+      "start": 371.64,
+      "end": 372.66,
+      "text": "Rags, and applications."
+    },
+    {
+      "segment_id": 101,
+      "start": 373.6,
+      "end": 375.5,
+      "text": "You can help Langchin in this way."
+    },
+    {
+      "segment_id": 102,
+      "start": 376.36,
+      "end": 377.68,
+      "text": "So, you can help Langchin."
+    },
+    {
+      "segment_id": 103,
+      "start": 377.68,
+      "end": 378.66,
+      "text": "So, you can help Langchin in all rounder player."
+    },
+    {
+      "segment_id": 104,
+      "start": 379.08,
+      "end": 380.48,
+      "text": "So, these are the reasons."
+    },
+    {
+      "segment_id": 105,
+      "start": 380.6,
+      "end": 385.82,
+      "text": "The reason why Langchin is popular is that you can learn Langchin."
+    },
+    {
+      "segment_id": 106,
+      "start": 386.06,
+      "end": 386.88,
+      "text": "Now, let us discuss one thing."
+    },
+    {
+      "segment_id": 107,
+      "start": 388.38,
+      "end": 391.76,
+      "text": "Why I decided to use this whole user side of the site."
+    },
+    {
+      "segment_id": 108,
+      "start": 392.32,
+      "end": 394.42,
+      "text": "First, we decided to use Langchin for the first time."
+    },
+    {
+      "segment_id": 109,
+      "start": 395.32,
+      "end": 399.88,
+      "text": "So, if you are looking at this, you can see many things here."
+    },
+    {
+      "segment_id": 110,
+      "start": 400.52,
+      "end": 403.92,
+      "text": "But, Langchin is a good starting point because,"
+    },
+    {
+      "segment_id": 111,
+      "start": 404.2,
+      "end": 409.12,
+      "text": "if you can learn Langchin first, then you can also take the flavor of the Langchin."
+    },
+    {
+      "segment_id": 112,
+      "start": 409.48,
+      "end": 413.56,
+      "text": "Means, this is that, in Langchin, you can also do the same thing."
+    },
+    {
+      "segment_id": 113,
+      "start": 413.96,
+      "end": 418.7,
+      "text": "For example, you can use Langchin's help, open source and close source LLM-2."
+    },
+    {
+      "segment_id": 114,
+      "start": 420.68,
+      "end": 421.98,
+      "text": "You can also use LLM-2."
+    },
+    {
+      "segment_id": 115,
+      "start": 422.4,
+      "end": 423.04,
+      "text": "You can also use LLM-2."
+    },
+    {
+      "segment_id": 116,
+      "start": 423.54,
+      "end": 428.34,
+      "text": "You can also integrate the whole Langchin with the help of the Langchin."
+    },
+    {
+      "segment_id": 117,
+      "start": 428.98,
+      "end": 432.0,
+      "text": "Plus, you can also get a little flavor from engineering."
+    },
+    {
+      "segment_id": 118,
+      "start": 432.76,
+      "end": 436.3,
+      "text": "When you are playing Langchin, you can develop your applications."
+    },
+    {
+      "segment_id": 119,
+      "start": 436.46,
+      "end": 438.1,
+      "text": "And, you can also make an AI agent."
+    },
+    {
+      "segment_id": 120,
+      "start": 438.88,
+      "end": 443.0,
+      "text": "In fact, I will show you that, you can also see Langchin's help."
+    },
+    {
+      "segment_id": 121,
+      "start": 443.52,
+      "end": 445.84,
+      "text": "You can also take a little flavor from the LLM-2."
+    },
+    {
+      "segment_id": 122,
+      "start": 445.84,
+      "end": 452.24,
+      "text": "So, this was the reason because of which, I started to start to start to start."
+    },
+    {
+      "segment_id": 123,
+      "start": 452.66,
+      "end": 457.28,
+      "text": "Because, in Langchin, you are getting a whole holistic view."
+    },
+    {
+      "segment_id": 124,
+      "start": 458.3,
+      "end": 460.58,
+      "text": "You are getting a whole user-side-value landscape."
+    },
+    {
+      "segment_id": 125,
+      "start": 461.32,
+      "end": 462.44,
+      "text": "You will work on every thing."
+    },
+    {
+      "segment_id": 126,
+      "start": 464.24,
+      "end": 469.72,
+      "text": "When we are playing Langchin, we will revisit the two types of topics."
+    },
+    {
+      "segment_id": 127,
+      "start": 469.72,
+      "end": 472.12,
+      "text": "Langchin is complete after playing Langchin."
+    },
+    {
+      "segment_id": 128,
+      "start": 472.58,
+      "end": 476.0,
+      "text": "I am a complete playlist of the same."
+    },
+    {
+      "segment_id": 129,
+      "start": 476.46,
+      "end": 477.18,
+      "text": "Okay."
+    },
+    {
+      "segment_id": 130,
+      "start": 477.7,
+      "end": 482.02,
+      "text": "Then, I am a complete playlist of the same."
+    },
+    {
+      "segment_id": 131,
+      "start": 482.46,
+      "end": 484.16,
+      "text": "And advanced, right techniques."
+    },
+    {
+      "segment_id": 132,
+      "start": 484.96,
+      "end": 485.74,
+      "text": "So, this is my plan."
+    },
+    {
+      "segment_id": 133,
+      "start": 486.0,
+      "end": 487.12,
+      "text": "First, let's take a holistic view."
+    },
+    {
+      "segment_id": 134,
+      "start": 487.9,
+      "end": 492.92,
+      "text": "After that, let's take a look at the details of the topic of the Baki."
+    },
+    {
+      "segment_id": 135,
+      "start": 492.92,
+      "end": 495.18,
+      "text": "We are going to cover this separate playlist."
+    },
+    {
+      "segment_id": 136,
+      "start": 495.46,
+      "end": 498.04,
+      "text": "That is why Langchin is my first choice."
+    },
+    {
+      "segment_id": 137,
+      "start": 498.04,
+      "end": 500.18,
+      "text": "Now, I will tell you about this playlist."
+    },
+    {
+      "segment_id": 138,
+      "start": 501.02,
+      "end": 503.18,
+      "text": "We will tell you exactly what topics to cover."
+    },
+    {
+      "segment_id": 139,
+      "start": 505.32,
+      "end": 509.86,
+      "text": "So, I am going to divide the whole Langchin playlist into three parts."
+    },
+    {
+      "segment_id": 140,
+      "start": 511.16,
+      "end": 515.78,
+      "text": "In the first part, we will cover the fundamentals of Langchin."
+    },
+    {
+      "segment_id": 141,
+      "start": 516.84,
+      "end": 521.32,
+      "text": "And this is the most important part because if you don't have any other things, then you will get it."
+    },
+    {
+      "segment_id": 142,
+      "start": 521.32,
+      "end": 522.32,
+      "text": "It will not make sense."
+    },
+    {
+      "segment_id": 143,
+      "start": 522.48,
+      "end": 525.8,
+      "text": "Second part is that we will seek out the applications of Raga applications."
+    },
+    {
+      "segment_id": 144,
+      "start": 525.8,
+      "end": 530.06,
+      "text": "And third part is that we will seek the agents of AI."
+    },
+    {
+      "segment_id": 145,
+      "start": 530.6,
+      "end": 530.74,
+      "text": "Okay."
+    },
+    {
+      "segment_id": 146,
+      "start": 531.36,
+      "end": 536.7,
+      "text": "So, if I am a detailed curriculum, then I am going to take a look at the curriculum."
+    },
+    {
+      "segment_id": 147,
+      "start": 537.2,
+      "end": 538.92,
+      "text": "That is exactly the topics of the topic."
+    },
+    {
+      "segment_id": 148,
+      "start": 539.92,
+      "end": 543.8,
+      "text": "So, the fundamentals of the Part 1 fundamentals where we will cover the first video,"
+    },
+    {
+      "segment_id": 149,
+      "start": 544.86,
+      "end": 545.98,
+      "text": "that Langchin is what?"
+    },
+    {
+      "segment_id": 150,
+      "start": 546.2,
+      "end": 550.36,
+      "text": "And I will tell you about the details of Langchin and the aspects of the technical aspects."
+    },
+    {
+      "segment_id": 151,
+      "start": 551.14,
+      "end": 554.9,
+      "text": "And the most important thing is that Langchin needs to be done."
+    },
+    {
+      "segment_id": 152,
+      "start": 554.9,
+      "end": 555.58,
+      "text": "Okay."
+    },
+    {
+      "segment_id": 153,
+      "start": 556.28,
+      "end": 561.58,
+      "text": "Second video is that Langchin has a component of the components of the components of the components of the components of the components of the components."
+    },
+    {
+      "segment_id": 154,
+      "start": 562.8,
+      "end": 564.9,
+      "text": "And after that, we will discuss the details of the details."
+    },
+    {
+      "segment_id": 155,
+      "start": 565.4,
+      "end": 567.06,
+      "text": "After that, we will start practicing some third-modern learn-法."
+    },
+    {
+      "segment_id": 156,
+      "start": 568.74,
+      "end": 573.2,
+      "text": "Third-modern models, which can also be done in Langchin."
+    },
+    {
+      "segment_id": 157,
+      "start": 574.02,
+      "end": 575.68,
+      "text": "How to integrate it with Langchin?"
+    },
+    {
+      "segment_id": 158,
+      "start": 575.68,
+      "end": 576.84,
+      "text": "How to integrate it? How to get it?"
+    },
+    {
+      "segment_id": 159,
+      "start": 576.98,
+      "end": 578.28,
+      "text": "We will cover everything here."
+    },
+    {
+      "segment_id": 160,
+      "start": 579.24,
+      "end": 580.9,
+      "text": "Fourth video will be on prompts."
+    },
+    {
+      "segment_id": 161,
+      "start": 580.9,
+      "end": 583.68,
+      "text": "Allakala type techniques will be discussed here."
+    },
+    {
+      "segment_id": 162,
+      "start": 584.62,
+      "end": 586.66,
+      "text": "Fourth would be around passing output."
+    },
+    {
+      "segment_id": 163,
+      "start": 586.98,
+      "end": 588.1,
+      "text": "Allakala is the output of the elements."
+    },
+    {
+      "segment_id": 164,
+      "start": 588.66,
+      "end": 590.62,
+      "text": "You can also share it with allakala."
+    },
+    {
+      "segment_id": 165,
+      "start": 590.78,
+      "end": 592.88,
+      "text": "So, we will cover this video."
+    },
+    {
+      "segment_id": 166,
+      "start": 593.12,
+      "end": 600.22,
+      "text": "After that, a technical aspect of Langchin, which we call the Rannables and L-cells or L-C-E-Ls."
+    },
+    {
+      "segment_id": 167,
+      "start": 601.14,
+      "end": 601.62,
+      "text": "This is covering this."
+    },
+    {
+      "segment_id": 168,
+      "start": 602.04,
+      "end": 605.9,
+      "text": "After that, a very important video will be the change that I have mentioned earlier."
+    },
+    {
+      "segment_id": 169,
+      "start": 606.4,
+      "end": 608.74,
+      "text": "This is the 7th-core of 7th."
+    },
+    {
+      "segment_id": 170,
+      "start": 608.74,
+      "end": 612.24,
+      "text": "After that, we will create a chart with one product."
+    },
+    {
+      "segment_id": 171,
+      "start": 613.3,
+      "end": 618.1,
+      "text": "We will cover it as it turns out a 7-8 videos on Chardvarts."
+    },
+    {
+      "segment_id": 172,
+      "start": 619.1,
+      "end": 622.28,
+      "text": "Many questions will be answered since they should be disconnected from your town or intrees."
+    },
+    {
+      "segment_id": 173,
+      "start": 622.3,
+      "end": 625.82,
+      "text": "After this we will discuss some are related to ads on reski tras and methods,"
+    },
+    {
+      "segment_id": 174,
+      "start": 628.22,
+      "end": 628.9,
+      "text": "Send equipment to your shopping shop or to desktop,"
+    },
+    {
+      "segment_id": 175,
+      "start": 628.9,
+      "end": 629.14,
+      "text": "unable to collaborate with their new topic."
+    },
+    {
+      "segment_id": 176,
+      "start": 629.14,
+      "end": 637.86,
+      "text": "I mean there are multiple branches related to benches & areas from meditation reports."
+    },
+    {
+      "segment_id": 177,
+      "start": 637.86,
+      "end": 639.48,
+      "text": "We have tools and tool kits."
+    },
+    {
+      "segment_id": 178,
+      "start": 640.16,
+      "end": 641.72,
+      "text": "We will see tool calling."
+    },
+    {
+      "segment_id": 179,
+      "start": 642.92,
+      "end": 643.54,
+      "text": "And then we will see everything."
+    },
+    {
+      "segment_id": 180,
+      "start": 644.2,
+      "end": 646.4,
+      "text": "Finally, we will make AI agent."
+    },
+    {
+      "segment_id": 181,
+      "start": 646.82,
+      "end": 650.92,
+      "text": "To this point, I am planning that we will have a 7th video."
+    },
+    {
+      "segment_id": 182,
+      "start": 651.86,
+      "end": 654.48,
+      "text": "But over time, this is how we can make it."
+    },
+    {
+      "segment_id": 183,
+      "start": 654.52,
+      "end": 656.58,
+      "text": "That we have a video and we have an ad."
+    },
+    {
+      "segment_id": 184,
+      "start": 657.2,
+      "end": 660.32,
+      "text": "So, roughly 7th of the video is a playlist."
+    },
+    {
+      "segment_id": 185,
+      "start": 661.12,
+      "end": 662.66,
+      "text": "Okay, so this is the curry column."
+    },
+    {
+      "segment_id": 186,
+      "start": 662.8,
+      "end": 663.94,
+      "text": "We will follow the video."
+    },
+    {
+      "segment_id": 187,
+      "start": 664.94,
+      "end": 668.74,
+      "text": "Now, I will tell you that I am focusing on the playlist."
+    },
+    {
+      "segment_id": 188,
+      "start": 669.48,
+      "end": 670.94,
+      "text": "I will make a process for the whole playlist."
+    },
+    {
+      "segment_id": 189,
+      "start": 671.96,
+      "end": 675.0,
+      "text": "So, first of all, I have focused on this."
+    },
+    {
+      "segment_id": 190,
+      "start": 675.36,
+      "end": 676.4,
+      "text": "I am doing this on the Lang chain."
+    },
+    {
+      "segment_id": 191,
+      "start": 677.14,
+      "end": 678.64,
+      "text": "I have updated information."
+    },
+    {
+      "segment_id": 192,
+      "start": 679.62,
+      "end": 682.12,
+      "text": "So, if you go to Lang chain website,"
+    },
+    {
+      "segment_id": 193,
+      "start": 683.28,
+      "end": 684.84,
+      "text": "then there are 3 versions."
+    },
+    {
+      "segment_id": 194,
+      "start": 685.42,
+      "end": 688.52,
+      "text": "1.1.2.3."
+    },
+    {
+      "segment_id": 195,
+      "start": 689.26,
+      "end": 691.62,
+      "text": "And the reason is that these are 3 versions."
+    },
+    {
+      "segment_id": 196,
+      "start": 691.62,
+      "end": 693.74,
+      "text": "1.1.1 is a lot of different."
+    },
+    {
+      "segment_id": 197,
+      "start": 693.74,
+      "end": 699.48,
+      "text": "Okay, so if you are at 1.1, then it is possible that you have to understand 3.1."
+    },
+    {
+      "segment_id": 198,
+      "start": 700.6,
+      "end": 705.14,
+      "text": "So, I am saying that I have updated the latest version."
+    },
+    {
+      "segment_id": 199,
+      "start": 706.36,
+      "end": 709.16,
+      "text": "This is the whole playlist of the entire playlist."
+    },
+    {
+      "segment_id": 200,
+      "start": 709.72,
+      "end": 711.56,
+      "text": "So, you will have the most updated information."
+    },
+    {
+      "segment_id": 201,
+      "start": 712.54,
+      "end": 715.26,
+      "text": "You will have to guide the 2.1 and 2.1."
+    },
+    {
+      "segment_id": 202,
+      "start": 715.54,
+      "end": 716.6,
+      "text": "I will guide you a little bit."
+    },
+    {
+      "segment_id": 203,
+      "start": 716.6,
+      "end": 722.1,
+      "text": "I will go to Lang chain, but the whole playlist is the first version of the whole playlist."
+    },
+    {
+      "segment_id": 204,
+      "start": 722.3,
+      "end": 724.74,
+      "text": "This is my first focus area."
+    },
+    {
+      "segment_id": 205,
+      "start": 725.36,
+      "end": 730.32,
+      "text": "Second focus area is that, I am going to make clarity."
+    },
+    {
+      "segment_id": 206,
+      "start": 730.32,
+      "end": 731.98,
+      "text": "You can see the playlist in this playlist."
+    },
+    {
+      "segment_id": 207,
+      "start": 733.3,
+      "end": 735.98,
+      "text": "So, I have seen many content on Lang chain."
+    },
+    {
+      "segment_id": 208,
+      "start": 736.0,
+      "end": 738.66,
+      "text": "You have seen YouTube and you have seen the YouTube."
+    },
+    {
+      "segment_id": 209,
+      "start": 738.66,
+      "end": 741.08,
+      "text": "But I think it is not a beginner friendly."
+    },
+    {
+      "segment_id": 210,
+      "start": 741.08,
+      "end": 744.56,
+      "text": "Because generally, what is the value of the video?"
+    },
+    {
+      "segment_id": 211,
+      "start": 745.3,
+      "end": 746.88,
+      "text": "You cannot find the fundamentals of Lang chain."
+    },
+    {
+      "segment_id": 212,
+      "start": 747.0,
+      "end": 747.86,
+      "text": "You have to build application."
+    },
+    {
+      "segment_id": 213,
+      "start": 749.5,
+      "end": 750.64,
+      "text": "So, what is the value of the video?"
+    },
+    {
+      "segment_id": 214,
+      "start": 751.12,
+      "end": 754.12,
+      "text": "You have to record 7th and you will also go to your application."
+    },
+    {
+      "segment_id": 215,
+      "start": 754.4,
+      "end": 756.64,
+      "text": "But you don't have the concept of clarity in your mind."
+    },
+    {
+      "segment_id": 216,
+      "start": 757.16,
+      "end": 758.38,
+      "text": "How is this whole game?"
+    },
+    {
+      "segment_id": 217,
+      "start": 758.84,
+      "end": 763.52,
+      "text": "In Lang chain, behind the scenes, I will show you the details of the video."
+    },
+    {
+      "segment_id": 218,
+      "start": 764.42,
+      "end": 768.02,
+      "text": "It is a very good chance to have a good chance of having a good chance."
+    },
+    {
+      "segment_id": 219,
+      "start": 768.02,
+      "end": 768.74,
+      "text": "I will have a good chance."
+    },
+    {
+      "segment_id": 220,
+      "start": 769.36,
+      "end": 773.44,
+      "text": "Third, my goal is that, I will impart the concept of the conceptual understanding."
+    },
+    {
+      "segment_id": 221,
+      "start": 775.22,
+      "end": 779.6,
+      "text": "Lang chain has practicalties, a framework, which helps you build applications."
+    },
+    {
+      "segment_id": 222,
+      "start": 780.04,
+      "end": 782.9,
+      "text": "But there are some concepts such as the concepts of the runebles."
+    },
+    {
+      "segment_id": 223,
+      "start": 784.12,
+      "end": 787.26,
+      "text": "So, this concept is not going to be a concept."
+    },
+    {
+      "segment_id": 224,
+      "start": 787.26,
+      "end": 791.96,
+      "text": "So, if you have to tell the point 3, then you have to take a deep impression."
+    },
+    {
+      "segment_id": 225,
+      "start": 792.84,
+      "end": 797.64,
+      "text": "And lastly, we will cover the 80% of the Lang chain."
+    },
+    {
+      "segment_id": 226,
+      "start": 798.74,
+      "end": 802.52,
+      "text": "I am not covering 100% because 100% is useful."
+    },
+    {
+      "segment_id": 227,
+      "start": 803.26,
+      "end": 805.98,
+      "text": "So, 80% is the most useful part of Lang chain."
+    },
+    {
+      "segment_id": 228,
+      "start": 807.08,
+      "end": 810.3,
+      "text": "In future, if I am a little more important than something important."
+    },
+    {
+      "segment_id": 229,
+      "start": 811.26,
+      "end": 812.38,
+      "text": "So, I will update the playlist."
+    },
+    {
+      "segment_id": 230,
+      "start": 812.9,
+      "end": 818.22,
+      "text": "But right now, my focus is to cover the most important 80% of Lang chain."
+    },
+    {
+      "segment_id": 231,
+      "start": 818.22,
+      "end": 819.8,
+      "text": "So, this is my focus."
+    },
+    {
+      "segment_id": 232,
+      "start": 820.32,
+      "end": 821.72,
+      "text": "It is my entire playlist."
+    },
+    {
+      "segment_id": 233,
+      "start": 822.1,
+      "end": 823.14,
+      "text": "Now, let's discuss the next few things."
+    },
+    {
+      "segment_id": 234,
+      "start": 823.62,
+      "end": 825.62,
+      "text": "What is the timeline of this playlist?"
+    },
+    {
+      "segment_id": 235,
+      "start": 825.92,
+      "end": 827.78,
+      "text": "First of all, we are starting the next one."
+    },
+    {
+      "segment_id": 236,
+      "start": 828.44,
+      "end": 830.06,
+      "text": "So, the answer is very quickly."
+    },
+    {
+      "segment_id": 237,
+      "start": 830.34,
+      "end": 833.64,
+      "text": "In fact, within a day or two, I will add the first video."
+    },
+    {
+      "segment_id": 238,
+      "start": 834.74,
+      "end": 836.72,
+      "text": "And after that, I will add the first one."
+    },
+    {
+      "segment_id": 239,
+      "start": 836.96,
+      "end": 838.52,
+      "text": "I will add per week, two videos."
+    },
+    {
+      "segment_id": 240,
+      "start": 840.6,
+      "end": 843.06,
+      "text": "And total 17 videos."
+    },
+    {
+      "segment_id": 241,
+      "start": 843.06,
+      "end": 847.84,
+      "text": "It means, roughly, we will cover this entire playlist in 8 weeks."
+    },
+    {
+      "segment_id": 242,
+      "start": 849.4,
+      "end": 853.48,
+      "text": "So, roughly speaking, we will add two months."
+    },
+    {
+      "segment_id": 243,
+      "start": 855.36,
+      "end": 857.6,
+      "text": "We will cover this entire playlist in 10 months."
+    },
+    {
+      "segment_id": 244,
+      "start": 858.44,
+      "end": 861.56,
+      "text": "This is not the first one because it is also a lot of things."
+    },
+    {
+      "segment_id": 245,
+      "start": 861.94,
+      "end": 863.52,
+      "text": "I am going to continue the Python playlist."
+    },
+    {
+      "segment_id": 246,
+      "start": 864.12,
+      "end": 866.3,
+      "text": "And then we will go to the Builder Valley side."
+    },
+    {
+      "segment_id": 247,
+      "start": 867.22,
+      "end": 870.92,
+      "text": "So, that is why I am feeling that two videos per week is a good speed."
+    },
+    {
+      "segment_id": 248,
+      "start": 870.92,
+      "end": 871.76,
+      "text": "You will practice a little bit in time."
+    },
+    {
+      "segment_id": 249,
+      "start": 873.64,
+      "end": 876.0,
+      "text": "So, yeah, this is the same thing in this video."
+    },
+    {
+      "segment_id": 250,
+      "start": 876.28,
+      "end": 878.16,
+      "text": "I think that I have told you everything about my mind."
+    },
+    {
+      "segment_id": 251,
+      "start": 879.96,
+      "end": 883.52,
+      "text": "And I am sure you have decided because I am very excited."
+    },
+    {
+      "segment_id": 252,
+      "start": 884.36,
+      "end": 889.06,
+      "text": "As I said in the last video, my biggest motivation is that curiosity."
+    },
+    {
+      "segment_id": 253,
+      "start": 889.9,
+      "end": 892.76,
+      "text": "And I want to learn a lot from this entire technology."
+    },
+    {
+      "segment_id": 254,
+      "start": 894.26,
+      "end": 895.62,
+      "text": "So, Lang chain is a good starting point."
+    },
+    {
+      "segment_id": 255,
+      "start": 895.82,
+      "end": 896.98,
+      "text": "Lang chain is a good thing."
+    },
+    {
+      "segment_id": 256,
+      "start": 896.98,
+      "end": 899.72,
+      "text": "So, you are very happy that you have to make a lot of applications."
+    },
+    {
+      "segment_id": 257,
+      "start": 900.56,
+      "end": 902.7,
+      "text": "So, since Lang chain is very empowering."
+    },
+    {
+      "segment_id": 258,
+      "start": 903.5,
+      "end": 905.8,
+      "text": "So, super excited. I really hope you are there."
+    },
+    {
+      "segment_id": 259,
+      "start": 906.24,
+      "end": 911.88,
+      "text": "If you liked this entire video, and if you are excited for this playlist, please like this video."
+    },
+    {
+      "segment_id": 260,
+      "start": 912.12,
+      "end": 914.1,
+      "text": "Share this video with your friends and friends."
+    },
+    {
+      "segment_id": 261,
+      "start": 915.2,
+      "end": 917.34,
+      "text": "And see you soon in the next video."
+    }
+  ]
+}

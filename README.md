@@ -152,22 +152,34 @@ cp .env.example .env
 
 ---
 
+## Indexed Knowledge Base (Pre-Indexed Lectures)
+
+| Video ID | Title | Duration | Segments | 75s Chunks | Key Topics Covered |
+| :--- | :--- | :---: | :---: | :---: | :--- |
+| `pSVk-5WemQ0` | **GenAI Roadmap for Beginners** | 50:14 | 915 | 41 | Deep Learning, Foundation Models, RAG, Fine-tuning |
+| `_3ezSpJw2E8` | **Generative AI using LangChain** | 15:18 | 261 | 13 | LangChain Architecture, Components, LCEL, Runnables |
+
+---
+
 ## Usage
 
 ### Command Line Interface (CLI)
 
 ```bash
 # 1. Inspect a YouTube video or playlist without downloading media
-python -m app.cli inspect "https://youtu.be/pSVk-5WemQ0"
+python -m app.cli inspect "https://youtu.be/_3ezSpJw2E8"
 
 # 2. Ingest one selected video
-python -m app.cli ingest "https://youtu.be/pSVk-5WemQ0"
+python -m app.cli ingest "https://youtu.be/_3ezSpJw2E8"
 
-# 3. List indexed lectures
+# 3. List all indexed lectures
 python -m app.cli list
 
-# 4. Ask a question (supports English, Hindi, and Hinglish)
+# 4. Ask a question on the GenAI Roadmap lecture
 python -m app.cli ask "GenAI roadmap mein deep learning ke concepts kahan se padhein?" --video-id pSVk-5WemQ0
+
+# 5. Ask a question on the LangChain lecture
+python -m app.cli ask "LangChain kya hai aur iska role kya hai?" --video-id _3ezSpJw2E8
 ```
 
 ### Web Interface & FastAPI Server (Port 8697)
@@ -182,6 +194,7 @@ Open your browser to:
 👉 **[http://localhost:8697](http://localhost:8697)**
 
 #### Web UI Highlights (Unriddle 3-Column Experience):
+- **Multi-Video Sidebar**: Seamlessly switch between indexed lectures (`pSVk-5WemQ0`, `_3ezSpJw2E8`, or any newly ingested video).
 - **Synchronized Video Player**: YouTube iframe embeds dynamically and jumps directly to the timestamp when any citation or timeline chip is clicked.
 - **Interactive Timeline Scrubber**: Color-coded lecture milestones (Intro, ML Basics, GenAI Landscape, LLM Foundations, 4-Stage Roadmap, Project Strategy).
 - **Visual Concept Roadmap Cards**: Direct lecture navigation cards for key architectural topics.

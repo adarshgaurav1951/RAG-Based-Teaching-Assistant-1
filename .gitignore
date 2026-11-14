@@ -36,6 +36,7 @@ data/audio/*
 !data/audio/.gitkeep
 data/transcripts/*
 !data/transcripts/.gitkeep
+!data/transcripts/*.json
 data/qdrant/*
 !data/qdrant/.gitkeep
 data/*.db

@@ -223,5 +223,6 @@ CREATE TABLE IF NOT EXISTS videos (
 | **Vector Indexing** | MiniLM outputs 384-dim vector; deterministic Qdrant upsert verified. |
 | **Retrieval Quality** | Multilingual queries (EN, HI, Hinglish) retrieve relevant lecture chunks. |
 | **Teaching Answer** | Grounded response generated with clickable timestamp links (`https://...&t=XXs`). |
-| **Benchmark Run** | Target video `pSVk-5WemQ0` successfully ingested, chunked, and queried. |
+| **Benchmark Run 1** | Target video `pSVk-5WemQ0` (50:14) successfully ingested, chunked, and queried. |
+| **Benchmark Run 2** | Target video `_3ezSpJw2E8` (15:18) successfully ingested, chunked, and queried with verified timestamps. |
 
